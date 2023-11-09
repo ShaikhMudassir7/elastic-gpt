@@ -10,7 +10,13 @@ from elasticsearch import Elasticsearch
 
 # Code is presented for demo purposes but should not be used in production
 # You may encounter exceptions which are not handled in the code
+import subprocess
 
+desired_version = '0.28'  # Replace with the version you want to install
+package_name = 'openai'  # Replace with the name of the package
+
+# Use pip to install the specific version of the package
+subprocess.run(['pip', 'install', f'{package_name}=={desired_version}'])
 
 openai_api = os.environ['openai_api']
 cloud_id = os.environ['cloud_id']
